@@ -57,6 +57,9 @@ const Wrapper = styled.div`
   font-size: 16px;
   color: white;
   position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 
   .spline {
     position: absolute;
@@ -71,7 +74,7 @@ const Wrapper = styled.div`
       transform: scale(0.7) translateX(600px);
     }
     @media (max-width: 600px) {
-      transform: scale(0.5) translateX(100px) translateY(-300px);
+      transform: scale(0.5) translateX(40px) translateY(-300px);
       right: auto;
       left: 50%;
       margin-left: -600px;
@@ -85,6 +88,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
   position: absolute;
   top: 30px;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -149,6 +153,10 @@ const Content = styled.div`
   p,
   button {
     margin: 0 30px 0 100px;
+
+    @media (max-width: 1024px) {
+      margin: 0 30px;
+    }
   }
 `;
 
@@ -158,6 +166,10 @@ const Menu = styled.ul`
   align-items: center;
   margin: 0 30px 0 100px;
   padding: 0;
+
+  @media (max-width: 1024px) {
+    margin: 0 30px;
+  }
 
   li {
     list-style: none;
@@ -174,6 +186,16 @@ const Menu = styled.ul`
       :hover {
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+    }
+  }
+
+  @media (max-width: 800px) {
+    justify-content: space-between;
+    li:nth-child(2),
+    li:nth-child(3),
+    li:nth-child(4),
+    li:nth-child(5) {
+      display: none;
     }
   }
 `;
@@ -197,5 +219,9 @@ const Social = styled.div`
       #1306dd 65.86%,
       #aa0eb2 100%
     );
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
